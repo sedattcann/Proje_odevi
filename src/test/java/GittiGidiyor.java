@@ -105,16 +105,6 @@ public class GittiGidiyor {
             }else {
                 log.info("Fiyat Karşılaştırma başarız");
             }
-            WebElement testDropdown=driver.findElement(xpath("//*[@id=\"cart-item-513630131\"]/div[1]/div[4]/div/div[2]/select/option[2]"));
-            Select dropdown=new Select(testDropdown);
-            dropdown.selectByValue("2");
-
-
-
-//            Select dropdown=new Select(testDropdown);
-//            dropdown.selectByValue("2");
-//            Select select =new Select(driver.findElement(By.id("513567981")));
-//            select.selectByIndex(2);
 
             Thread.sleep(5000);
 
