@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -66,16 +68,25 @@ public class GittiGidiyor {
             driver.findElement(By.tagName("body")).sendKeys(Keys.SPACE);
             driver.findElement(xpath("//*[@id=\"__next\"]/main/div[4]/section[1]/section[2]/a")).click();
             Thread.sleep(3000);
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,1000)", "");
+//            JavascriptExecutor js = (JavascriptExecutor) driver;
+//            js.executeScript("window.scrollBy(0,1000)", "");
             Thread.sleep(3000);
             driver.findElement(linkText("Sonraki")).click();
             log.info("2.Sayfaya Geçildi");
             Thread.sleep(5000);
-            List<WebElement> link=driver.findElements(By.cssSelector("#__next > main > div.vfy45n-0.bWfBMK > div > div > div.sc-1nx8ums-0.fbkkZW > div > div.sc-533kbx-0.sc-1v2q8t1-0.iCRwxx.gyNBA > div.pmyvb0-0.jCCkZh > ul > li:nth-child(9) > article > div.sc-533kbx-0.sc-1v2q8t1-0.iCRwxx.ixSZpI.sc-1n49x8z-12.bhlHZl"));
-            link.get(new Random().nextInt(link.size())).click();
-            log.info("Rasgele Seçildi");
-            log.info("Ürün detayına girildi");
+
+            List<WebElement> products=driver.findElements(xpath("//*[@id=\"__next\"]/main/div[2]/div/div/div[2]/div/div[3]/div[3]//img"));
+            Random random=new Random();
+            int randomProducts=random.nextInt(products.size());
+            products.get(randomProducts).click();
+//            List<WebElement> visited = new ArrayList<>();
+//            WebElement random=products.get(new Random().nextInt(products.size()));
+//            if ( !visited.contains(random)){
+//                random.click();
+//            }
+            //Random için tekrar bakılacak!!!
+
+            log.info("Rasgele bir ürün seçilip Ürün detayına girildi");
             FileWriter fwriter=new FileWriter("C:\\javademos\\TestiniumWork\\src\\test\\java\\info.txt",true);
             fwriter.write(driver.findElement(xpath("//*[@id=\"sp-title\"]")).getText());
             fwriter.write("\n");
@@ -87,26 +98,24 @@ public class GittiGidiyor {
             log.info("İnfo dosyası oluşturuldu ve bilgiler yazıldı");
             Thread.sleep(9000);
             var firstPrice=driver.findElement(xpath("//*[@id=\"sp-price-lowPrice\"]")).getText();
+
+
             log.info("seçilen ürünün fiyatı"+" : "+firstPrice);
             driver.findElement(By.tagName("body")).sendKeys(Keys.SPACE);
-            driver.findElement(id("add-to-basket")).click();
+            Thread.sleep(2000);
+            driver.findElement(xpath("//*[@id=\"add-to-basket\"]")).click();
             log.info("Ürün Sepet'e Eklendi");
             Thread.sleep(3000);
             driver.findElement(xpath("//*[@id=\"header_wrapper\"]/div[4]/div[3]/a/div[1]/div")).click();
             Thread.sleep(2000);
             log.info("Sepet e gidildi");
-           var lastPrice =driver.findElement(xpath("//*[@id=\"cart-price-container\"]/div[3]/p")).getText();
+            var lastPrice =driver.findElement(By.xpath("//*[@id=\"cart-price-container\"]/div[3]/p")).getText();
             log.info("sepetteki ürünün fiyatı"+" : "+lastPrice);
             Thread.sleep(2000);
-
-            if (firstPrice!=null&&lastPrice!=null&&lastPrice==firstPrice){
+            if (firstPrice==lastPrice){
                 log.info("Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatı doğru");
-            }else if (firstPrice==null){
-                log.info("Seçilen ürün fiyatı yanlış");
-            }else if (lastPrice==null){
-                log.info("Sepete eklenen ürünün sepetteki fiyarı farklı");
-            }else {
-                log.info("Seçilen ürün ile fiyatı yanlış");
+            }else{
+                log.error("Ürün karşılaştırma başarısız");
             }
             Thread.sleep(5000);
 
