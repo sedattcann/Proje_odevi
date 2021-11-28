@@ -115,7 +115,7 @@ public class GittiGidiyor {
             if (firstPrice==lastPrice){
                 log.info("Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatı doğru");
             }else{
-                log.error("Ürün karşılaştırma başarısız");
+                log.error("Ürün fiyat karşılaştırma başarısız");
             }
             Thread.sleep(5000);
 
