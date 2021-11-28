@@ -99,13 +99,15 @@ public class GittiGidiyor {
             log.info("sepetteki ürünün fiyatı"+" : "+lastPrice);
             Thread.sleep(2000);
 
-
             if (firstPrice!=null&&lastPrice!=null&&lastPrice==firstPrice){
                 log.info("Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatı doğru");
+            }else if (firstPrice==null){
+                log.info("Seçilen ürün fiyatı yanlış");
+            }else if (lastPrice==null){
+                log.info("Sepete eklenen ürünün sepetteki fiyarı farklı");
             }else {
-                log.info("Fiyat Karşılaştırma başarız");
+                log.info("Seçilen ürün ile fiyatı yanlış");
             }
-
             Thread.sleep(5000);
 
 
