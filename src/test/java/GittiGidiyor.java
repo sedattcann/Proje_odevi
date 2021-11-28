@@ -97,22 +97,24 @@ public class GittiGidiyor {
             log.info("Sepet e gidildi");
            var lastPrice =driver.findElement(xpath("//*[@id=\"cart-price-container\"]/div[3]/p")).getText();
             log.info("sepetteki ürünün fiyatı"+" : "+lastPrice);
+            Thread.sleep(2000);
+
+
             if (firstPrice!=null&&lastPrice!=null&&lastPrice==firstPrice){
                 log.info("Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatı doğru");
             }else {
                 log.info("Fiyat Karşılaştırma başarız");
             }
+            WebElement testDropdown=driver.findElement(xpath("//*[@id=\"cart-item-513630131\"]/div[1]/div[4]/div/div[2]/select/option[2]"));
+            Select dropdown=new Select(testDropdown);
+            dropdown.selectByValue("2");
 
-            Thread.sleep(2000);
 
 
-
-            WebElement testDropdown=driver.findElement(cssSelector("#cart-item-513628517 > div.gg-w-24.gg-d-24.gg-t-24.gg-m-24.padding-none.product-item-box-container > div.gg-w-2.gg-d-3.gg-t-4.gg-m-18.pull-right-m.hidden-m.padding-none > div > div.gg-input.gg-input-select > select"));
-//            testDropdown.click();
 //            Select dropdown=new Select(testDropdown);
 //            dropdown.selectByValue("2");
-            Select select =new Select(driver.findElement(By.id("513567981")));
-            select.selectByIndex(2);
+//            Select select =new Select(driver.findElement(By.id("513567981")));
+//            select.selectByIndex(2);
 
             Thread.sleep(5000);
 

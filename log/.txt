@@ -290,3 +290,67 @@
 2021-11-28 11:46:46 INFO  TestLog:78 - Ürün detayına girildi
 2021-11-28 11:46:46 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
 2021-11-28 11:46:55 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:49:07 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 11:49:09 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 11:49:14 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 11:49:24 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 11:49:33 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 11:49:33 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 11:49:33 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 11:49:42 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:49:43 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 11:55:31 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 11:55:32 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 11:55:37 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 11:55:48 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 11:55:55 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 11:55:55 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 11:55:55 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 11:56:04 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:56:04 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 11:56:22 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 11:56:23 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 11:56:28 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 11:56:38 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 11:56:45 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 11:56:45 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 11:56:45 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 11:56:54 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:56:54 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 11:57:01 INFO  TestLog:97 - Sepet e gidildi
+2021-11-28 11:57:01 INFO  TestLog:99 - sepetteki ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:57:01 INFO  TestLog:103 - Fiyat Karşılaştırma başarız
+2021-11-28 11:58:16 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 11:58:17 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 11:58:22 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 11:58:33 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 11:58:40 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 11:58:40 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 11:58:40 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 11:58:49 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:58:49 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 11:58:56 INFO  TestLog:97 - Sepet e gidildi
+2021-11-28 11:58:56 INFO  TestLog:99 - sepetteki ürünün fiyatı : 4.441,10 TL
+2021-11-28 11:58:56 INFO  TestLog:103 - Fiyat Karşılaştırma başarız
+2021-11-28 11:59:40 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 11:59:41 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 11:59:46 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 11:59:56 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 12:00:06 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 12:00:06 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 12:00:06 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 12:00:15 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 12:00:15 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 12:00:21 INFO  TestLog:97 - Sepet e gidildi
+2021-11-28 12:00:21 INFO  TestLog:99 - sepetteki ürünün fiyatı : 4.441,10 TL
+2021-11-28 12:01:21 INFO  TestLog:37 - Driver Başlatıldı
+2021-11-28 12:01:22 INFO  TestLog:55 - Arama kutusuna text girildi
+2021-11-28 12:01:27 INFO  TestLog:58 - arama butonuna basıldı
+2021-11-28 12:01:37 INFO  TestLog:73 - 2.Sayfaya Geçildi
+2021-11-28 12:01:44 INFO  TestLog:77 - Rasgele Seçildi
+2021-11-28 12:01:44 INFO  TestLog:78 - Ürün detayına girildi
+2021-11-28 12:01:44 INFO  TestLog:87 - İnfo dosyası oluşturuldu ve bilgiler yazıldı
+2021-11-28 12:01:53 INFO  TestLog:90 - seçilen ürünün fiyatı : 4.441,10 TL
+2021-11-28 12:01:54 INFO  TestLog:93 - Ürün Sepet'e Eklendi
+2021-11-28 12:02:00 INFO  TestLog:97 - Sepet e gidildi
+2021-11-28 12:02:00 INFO  TestLog:99 - sepetteki ürünün fiyatı : 4.441,10 TL
