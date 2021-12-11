@@ -1,4 +1,3 @@
-import org.apache.commons.logging.impl.Log4JLogger;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -6,14 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.support.ui.Select;
 import static  org.openqa.selenium.By.*;
 
 
@@ -25,11 +21,11 @@ public class GittiGidiyor {
     private static Logger log  = Logger.getLogger(TestLog.class.getName());
     @Before
     public void setUp(){
-        PropertyConfigurator.configure("C:\\javademos\\TestiniumWork\\src\\main\\resources\\log4j.properties");
+        PropertyConfigurator.configure("C:\\Users\\SedatCan\\IdeaProjects\\Proje_odevi\\src\\main\\resources\\log4j.properties");
 
         try {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-            System.setProperty("webdriver.chrome.driver","C:\\javademos\\TestiniumWork\\ChromeWebDriver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","C:\\Users\\SedatCan\\IdeaProjects\\Proje_odevi\\ChromeWebDriver\\chromedriver.exe");
             driver=new ChromeDriver(capabilities);
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
@@ -56,7 +52,8 @@ public class GittiGidiyor {
             driver.findElement(xpath("//*[@id='main-header']/div[3]/div/div/div/div[2]/form/div/div[1]/div[2]/input")).sendKeys("Bilgisayar");
             log.info("Arama kutusuna text girildi");
             Thread.sleep(2000);
-            driver.findElement(xpath("//*[@id=\"main-header\"]/div[3]/div/div/div/div[2]/form/div/div[2]/button")).click();
+          driver.findElement(xpath("//*[@id=\"main-header\"]/div[3]/div/div/div/div[2]/form/div/div[2]/button")).click();
+
             log.info("arama butonuna basıldı");
             Thread.sleep(2000);
             driver.findElement(By.tagName("body")).sendKeys(Keys.SPACE);
@@ -72,22 +69,17 @@ public class GittiGidiyor {
 //            js.executeScript("window.scrollBy(0,1000)", "");
             Thread.sleep(3000);
             driver.findElement(linkText("Sonraki")).click();
+            Thread.sleep(2000);
+            String ikincisayfa="https://www.gittigidiyor.com/arama?k=bilgisayar&sf=2";
+            String url = driver.getCurrentUrl();
             log.info("2.Sayfaya Geçildi");
             Thread.sleep(5000);
-
             List<WebElement> products=driver.findElements(xpath("//*[@id=\"__next\"]/main/div[2]/div/div/div[2]/div/div[3]/div[3]//img"));
             Random random=new Random();
             int randomProducts=random.nextInt(products.size());
             products.get(randomProducts).click();
-//            List<WebElement> visited = new ArrayList<>();
-//            WebElement random=products.get(new Random().nextInt(products.size()));
-//            if ( !visited.contains(random)){
-//                random.click();
-//            }
-            //Random için tekrar bakılacak!!!
-
             log.info("Rasgele bir ürün seçilip Ürün detayına girildi");
-            FileWriter fwriter=new FileWriter("C:\\javademos\\TestiniumWork\\src\\test\\java\\info.txt",true);
+            FileWriter fwriter=new FileWriter("C:\\Users\\SedatCan\\IdeaProjects\\Proje_odevi\\src\\test\\java\\info.txt",true);
             fwriter.write(driver.findElement(xpath("//*[@id=\"sp-title\"]")).getText());
             fwriter.write("\n");
             fwriter.write("------------------------------------------------------");
@@ -98,8 +90,6 @@ public class GittiGidiyor {
             log.info("İnfo dosyası oluşturuldu ve bilgiler yazıldı");
             Thread.sleep(9000);
             var firstPrice=driver.findElement(xpath("//*[@id=\"sp-price-lowPrice\"]")).getText();
-
-
             log.info("seçilen ürünün fiyatı"+" : "+firstPrice);
             driver.findElement(By.tagName("body")).sendKeys(Keys.SPACE);
             Thread.sleep(2000);
@@ -112,7 +102,7 @@ public class GittiGidiyor {
             var lastPrice =driver.findElement(By.xpath("//*[@id=\"cart-price-container\"]/div[3]/p")).getText();
             log.info("sepetteki ürünün fiyatı"+" : "+lastPrice);
             Thread.sleep(2000);
-            if (firstPrice==lastPrice){
+            if (firstPrice.equals(lastPrice)){
                 log.info("Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatı doğru");
             }else{
                 log.error("Ürün fiyat karşılaştırma başarısız");
