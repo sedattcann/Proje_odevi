@@ -33,11 +33,9 @@ public class GittiGidiyor {
             driver.manage().timeouts().setScriptTimeout(30,TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
             log.info("Driver Başlatıldı");
-
-
         }catch (Exception e){
-            e.printStackTrace();
             log.info("Driver Başlatılırken Hata Alındı");
+            e.printStackTrace();
         }
     }
 
@@ -46,14 +44,11 @@ public class GittiGidiyor {
     public void GG() {
 
         try {
-
             driver.get(GGUrl);
-
             driver.findElement(xpath("//*[@id='main-header']/div[3]/div/div/div/div[2]/form/div/div[1]/div[2]/input")).sendKeys("Bilgisayar");
             log.info("Arama kutusuna text girildi");
             Thread.sleep(2000);
           driver.findElement(xpath("//*[@id=\"main-header\"]/div[3]/div/div/div/div[2]/form/div/div[2]/button")).click();
-
             log.info("arama butonuna basıldı");
             Thread.sleep(2000);
             driver.findElement(By.tagName("body")).sendKeys(Keys.SPACE);
